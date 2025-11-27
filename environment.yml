@@ -1,12 +1,9 @@
-name: skillbox
+name: myenv
 channels:
   - conda-forge
+  - defaults
 dependencies:
   - python=3.11
-  - requests
-  - selenium=4.10
   - pytest
-  - pytest-rerunfailures
-  - make
-  - webdriver-manager
-  - pythob-chromedriver-binary
+  - selenium
+  - python-chromedriver-binary
