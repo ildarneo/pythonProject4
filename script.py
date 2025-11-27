@@ -1,20 +1,24 @@
-from selenium.webdriver import ChromeService
+from selenium import webdriver
+from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
-import chromedriver_binary
-from selenium.webdriver.chrome.service import Service as ChromeService
-from selenium.webdriver.chrome import Options as ChromeOptions
 
-from selenium.webdriver import ChromeService
 def run_script():
-    options = ChromeOptions
-    options.healess = True
+    # Создаем объект настроек браузера
+    options = Options()
+    options.headless = True  # Запускать в фоновом режиме, без графического интерфейса
 
+    # Создаем драйвер Chrome с помощью webdriver_manager
+    driver = webdriver.Chrome(
+        executable_path=ChromeDriverManager().install(),
+        options=options
+    )
 
-# Устанавливаем драйвер и запускаем браузер
-    driver = ChromeService(options=options)
-# Открываем тестируемый сайт
+    # Открываем сайт
     driver.get("https://skillbox.ru")
-# Закрываем браузер
+    print(driver.title)  # например, выводим название страницы
+
+    # Закрываем браузер
     driver.quit()
+
 if __name__ == "__main__":
     run_script()
