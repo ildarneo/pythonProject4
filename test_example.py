@@ -23,3 +23,10 @@ class TestExample:
         print("Заголовок страницы:", driver.title)
         # Проверка заголовка
         assert "Mail" == driver.title
+
+    def test_swim(self, set_up_browser):
+        driver = set_up_browser
+        driver.get("https://swimmasters.ru/")
+        print("Заголовок страницы:", driver.title)
+        # Проверка заголовка
+        assert "Федерация" in driver.title
