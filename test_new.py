@@ -4,6 +4,8 @@ from selenium import webdriver
 
 
 class TestExample:
+
+
     def test_new(self):
         driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
         try:
