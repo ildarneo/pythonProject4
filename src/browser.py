@@ -4,7 +4,7 @@ from selenium.webdriver import Chrome
 from selenium.webdriver.chrome.service import Service
 from selenium.webdriver.chrome.options import Options as ChromeOptions
 
-path_to_driver = 'C:/Chromedriver/chromedriver.exe' # это пример пути как нужно указать а так driver нужно скачать от сюда https://googlechromelabs.github.io/chrome-for-testing/ и тут указать путь до него
+path_to_driver = 'C:/Chromedriver/chromedriver.exe'  # это пример пути как нужно указать а так driver нужно скачать от сюда https://googlechromelabs.github.io/chrome-for-testing/ и тут указать путь до него
 
 
 @pytest.fixture()

@@ -2,6 +2,7 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
+
 def run_script():
     # Создаем объект настроек  браузера
     options = Options()
@@ -19,6 +20,7 @@ def run_script():
 
     # Закрываем браузер
     driver.quit()
+
 
 if __name__ == "__main__":
     run_script()
