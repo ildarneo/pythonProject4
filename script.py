@@ -3,7 +3,7 @@ from selenium.webdriver.chrome.options import Options
 from webdriver_manager.chrome import ChromeDriverManager
 
 def run_script():
-    # Создаем объект настроек браузера
+    # Создаем объект настроек  браузера
     options = Options()
     options.headless = True  # Запускать в фоновом режиме, без графического интерфейса
 
