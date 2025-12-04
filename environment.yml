@@ -6,4 +6,4 @@ dependencies:
   - python=3.11
   - pytest
   - selenium
-  - python-chromedriver-binary
+  - python-chromedriver-binar

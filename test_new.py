@@ -1,6 +1,8 @@
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.service import Service as ChromeService
 from selenium import webdriver
+import pluggy
+
 
 class TestExample:
     def test_new(self):
