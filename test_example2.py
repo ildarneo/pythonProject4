@@ -23,7 +23,9 @@ class TestExample:
         elem_xpath = driver.find_element(By.XPATH, '//form/descendant::input[@id="password"]')
         elem_css =driver.find_element(By.CSS_SELECTOR, 'form input#password')
         elem_css = driver.find_element(By.TAG_NAME, 'input')
-        elem_part = driver.find_elements(By.PARTIAL_LINK_TEXT, "Auth")
+        elem_part = driver.find_elements(By.PARTIAL_LINK_TEXT, 'Auth')
+        elem_h4  = driver.find_element(By.TAG_NAME, 'h4')
+        assert 'SuperSecretPassword' in elem_h4.text
 
         def test_find_element1(self, set_up_browser):
             driver = set_up_browser
