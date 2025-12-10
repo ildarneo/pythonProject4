@@ -9,4 +9,4 @@ dependencies:
   - pytest-rerunfailures
   - make
   - webdriver-manager
-  - python-chromedriver-binary
+  - pythob-chromedriver-binary
