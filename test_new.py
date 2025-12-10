@@ -10,7 +10,7 @@ class TestExample:
         driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
         try:
             driver.get("https://mail.ru/")
-            print("Заголовок страницы:", driver.title)
+            print("Заголовок страницы :", driver.title)
             # assert "Skillbox – образовательная платформа с онлайн-курсами." == driver.title
             assert "Mail: Почта, Облако, Календарь, Заметки, Покупки — сервисы для работы и жизни" == driver.title
 
