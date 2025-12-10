@@ -39,8 +39,10 @@ class TestInput:
         print("Заголовок страницы: ", driver.title)
         el = driver.find_element(By.ID, 'id-search-field')
         el.send_keys('basic text')
+        time.sleep(3)
         pass
         el.clear()
+        time.sleep(3)
         pass
 
     def test_send_copypaste2(self, set_up_browser):
