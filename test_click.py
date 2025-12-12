@@ -67,3 +67,15 @@ class TestClick:
         action_chains.double_click(driver.find_element(By.XPATH, "//a[contains(@aria-label, 'Войти')]")).perform()
         time.sleep(2)
         driver.quit()
+
+    def test_checkbox(self, set_up_browser):
+        driver = set_up_browser
+        driver.get("https://www.aviasales.ru/search/KZN1701LED19011")
+        #print("Заголовок страницы: ", driver.title)
+        driver.find_element(By.XPATH, "//span[contains(text(), 'С багажом')]").click()
+        driver.find_element(By.XPATH, "//span[contains(text(), 'Прямые рейсы')]").click()
+        driver.find_element(By.XPATH, "//span[contains(text(), 'С багажом')]").click()
+        pass
+        time.sleep(5)
+        driver.quit()
+        pass
