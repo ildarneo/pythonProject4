@@ -75,7 +75,7 @@ class TestClick:
         driver.find_element(By.XPATH, "//span[contains(text(), 'С багажом')]").click()
         driver.find_element(By.XPATH, "//span[contains(text(), 'Прямые рейсы')]").click()
         driver.find_element(By.XPATH, "//span[contains(text(), 'С багажом')]").click()
-        pass
+
         time.sleep(5)
         driver.quit()
         pass
