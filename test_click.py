@@ -93,7 +93,7 @@ class TestClick:
         #двигаем бегунок
         driver = set_up_browser
         driver.get("https://www.aviasales.ru/search/KZN1812LED20121")
-        # print("Заголовок страницы: ", driver.title)
+        # print("Заголовок страницы : ", driver.title)
         el = driver.find_element(By.XPATH, "//div[contains(@class, 'rc-slider-handle-2')]")
 
         action_chains = webdriver.ActionChains(driver)
