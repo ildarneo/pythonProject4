@@ -28,15 +28,16 @@ class TestClick:
     def test_click(self, set_up_browser):
         driver = set_up_browser
         driver.get("https://www.python.org/")
-        #print("Заголовок страницы: ", driver.title)
+        # print("Заголовок страницы: ", driver.title)
         driver.find_element(By.XPATH, '//but4ton').click()
         pass
         time.sleep(5)
         pass
+
     def test_clickavia(self, set_up_browser):
         driver = set_up_browser
         driver.get("https://www.aviasales.ru/search/KZN1501LED18011")
-        #print("Заголовок страницы: ", driver.title)
+        # print("Заголовок страницы: ", driver.title)
         driver.find_element(By.XPATH, "//button[@data-test-id='profile-button']").click()
         pass
         time.sleep(5)
@@ -44,10 +45,10 @@ class TestClick:
         pass
 
     def test_clickavia1(self, set_up_browser):
-        #поиск элемента, ожидание и клик
+        # поиск элемента, ожидание и клик
         driver = set_up_browser
         driver.get("https://www.aviasales.ru/")
-        #print("Заголовок страницы: ", driver.title)
+        # print("Заголовок страницы: ", driver.title)
         profile_button = WebDriverWait(driver, 4).until(
             EC.element_to_be_clickable((By.XPATH, "//button[@data-test-id='profile-button']"))
         )
@@ -58,7 +59,7 @@ class TestClick:
         pass
 
     def testdoubleclick_google(self, set_up_browser):
-        #двойной клик
+        # двойной клик
         driver = set_up_browser
         driver.get("https://www.google.com/")
         print("Заголовок страницы: ", driver.title)
@@ -70,12 +71,39 @@ class TestClick:
 
     def test_checkbox(self, set_up_browser):
         driver = set_up_browser
-        driver.get("https://www.aviasales.ru/search/KZN1701LED19011")
-        #print("Заголовок страницы: ", driver.title)
+        driver.get("https://www.aviasales.ru/search/KZN1812AER23121")
+        # print("Заголовок страницы: ", driver.title)
         driver.find_element(By.XPATH, "//span[contains(text(), 'С багажом')]").click()
         driver.find_element(By.XPATH, "//span[contains(text(), 'Прямые рейсы')]").click()
         driver.find_element(By.XPATH, "//span[contains(text(), 'С багажом')]").click()
 
         time.sleep(5)
+        driver.quit()
+        pass
+
+    def test_swim(self, set_up_browser):
+        driver = set_up_browser
+        driver.get("https://swimmasters.ru/")
+        print("Заголовок страницы:", driver.title)
+        # Проверка заголовка
+        assert "Федерация" in driver.title
+        driver.quit()
+
+    def test_slider(self, set_up_browser):
+        #двигаем бегунок
+        driver = set_up_browser
+        driver.get("https://www.aviasales.ru/search/KZN1812LED20121")
+        # print("Заголовок страницы: ", driver.title)
+        el = driver.find_element(By.XPATH, "//div[contains(@class, 'rc-slider-handle-2')]")
+
+        action_chains = webdriver.ActionChains(driver)
+        action_chains\
+            .click_and_hold(el)\
+            .move_by_offset(xoffset=-50,yoffset=0)\
+            .perform()
+        action_chains.release().perform()
+
+
+
         driver.quit()
         pass
