@@ -25,7 +25,7 @@ class TestPraktik4:
         driver = set_up_browser
         driver.get("https://github.com/microsoft/vscode/issues")
         search_input = driver.find_element(By.CSS_SELECTOR, "input[name='repository-inputname']")
-        search_input.send_keys(Keys.CONTROL + "a")  # выделить весь текст
+        search_input.send_keys(Keys.CONTROL + "a")
         search_input.send_keys(Keys.DELETE)
         search_input.send_keys("in:title bug")
 
