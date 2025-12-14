@@ -64,7 +64,7 @@ class TestPraktik4:
         driver.find_element(By.ID, "search_stars").send_keys(">20000")
         driver.find_element(By.ID, "search_filename").send_keys("environment.yml")
 
-        time.sleep(5)
+        time.sleep(3)
         driver.find_element(By.CSS_SELECTOR, "button.btn.flex-auto").click()
         time.sleep(3)
         driver.quit()
@@ -72,6 +72,9 @@ class TestPraktik4:
     def test_case4(self, set_up_browser):
         driver = set_up_browser
         driver.get("https://skillbox.ru/code/")
+        driver.maximize_window()
+        time.sleep(5)
+
         driver.find_element(By.XPATH,
                             "//span[contains(text(), 'Профессия')]").click()
 
@@ -99,6 +102,5 @@ class TestPraktik4:
         driver.get("https://github.com/microsoft/vscode/graphs/commit-activity")
         driver.find_element(By.CSS_SELECTOR, 'path.highcharts-point.highcharts-color-0')
         time.sleep(6)
-
         driver.quit()
 
