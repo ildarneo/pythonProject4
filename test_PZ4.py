@@ -55,7 +55,6 @@ class TestPraktik4:
         time.sleep(1)
         select_element = driver.find_element(By.ID, "search_user_language")
 
-        # Создать объект Select
         select = Select(select_element)
 
         # Выбрать опцию по значению
