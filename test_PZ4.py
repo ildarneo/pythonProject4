@@ -128,6 +128,7 @@ class TestPraktik4:
         driver.maximize_window()
         el = driver.find_element(By.CSS_SELECTOR, 'path.highcharts-point.highcharts-color-0')
         actions = ActionChains(driver)
+        time.sleep(6)
 
         # Навести мышку на элемент
         actions.move_to_element(el).perform()
