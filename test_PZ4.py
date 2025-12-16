@@ -57,7 +57,7 @@ class TestPraktik4:
 
         select = Select(select_element)
 
-        # Выбрать опцию по значению
+        # Выбрать опцию по значени
         select.select_by_value("Python")
         time.sleep(1)
 
