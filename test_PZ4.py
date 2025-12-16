@@ -42,8 +42,9 @@ class TestPraktik4:
         driver.find_element(By.XPATH, "//span[text()='Author']").click()
         search_input = driver.find_element(By.CSS_SELECTOR, "input[aria-label='Filter authors']")
         search_input.send_keys("bpasero")
+        search_input.click()
         time.sleep(3)
-        driver.find_element(By.CLASS_NAME, "prc-ActionList-ItemLabel-TmBhn").click()
+        #driver.find_element(By.CLASS_NAME, "prc-ActionList-ItemLabel-TmBhn").click()
         time.sleep(3)
         driver.quit()
 
