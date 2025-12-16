@@ -1,0 +1,12 @@
+name: skillbox1
+channels:
+  - conda-forge
+dependencies:
+  - python
+  - requests
+  - selenium
+  - pytest
+  - pytest-rerunfailures
+  - make
+  - webdriver-manager
+  - python-chromedriver-binary
