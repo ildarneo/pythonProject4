@@ -66,36 +66,36 @@ class TestPraktik4:
         time.sleep(3)
         driver.quit()
 
+    # def test_case4(self, set_up_browser):
+    #     driver = set_up_browser
+    #     driver.get("https://skillbox.ru/code/")
+    #     driver.maximize_window()
+    #     time.sleep(5)
+    #
+    #     driver.find_element(By.XPATH, "//button[contains(text(), 'Фильтры')]").click()
+    #     driver.find_element(By.XPATH, "//span[contains(@class, 'ui-tab__text') and contains(text(), 'Профессия')]") \
+    #         .click()
+    #
+    #     driver.find_element(By.XPATH,
+    #                         "//span[contains(@class, 'ui-tab__text f f--m') and contains(text(), 'От 6 до 12 мес.')]") \
+    #         .click()
+    #
+    #     driver.find_element(By.XPATH,
+    #                         "//li[contains(text(), 'От 6 до 12 мес.')]") \
+    #         .click()
+    #     driver.find_element(By.XPATH,
+    #                         "//span[contains(text(), 'Тематика')]") \
+    #         .click()
+    #     time.sleep(3)
+    #     driver.find_element(By.XPATH, "//li[contains(text(), 'Pentest')]") \
+    #         .click()
+    #     driver.find_element(By.XPATH, "//button[contains(text(), 'Применить')]") \
+    #         .click()
+    #
+    #     time.sleep(3)
+    #     driver.quit()
+
     def test_case4(self, set_up_browser):
-        driver = set_up_browser
-        driver.get("https://skillbox.ru/code/")
-        driver.maximize_window()
-        time.sleep(5)
-
-        driver.find_element(By.XPATH, "//button[contains(text(), 'Фильтры')]").click()
-        driver.find_element(By.XPATH, "//span[contains(@class, 'ui-tab__text') and contains(text(), 'Профессия')]") \
-            .click()
-
-        driver.find_element(By.XPATH,
-                            "//span[contains(@class, 'ui-tab__text f f--m') and contains(text(), 'От 6 до 12 мес.')]") \
-            .click()
-
-        driver.find_element(By.XPATH,
-                            "//li[contains(text(), 'От 6 до 12 мес.')]") \
-            .click()
-        driver.find_element(By.XPATH,
-                            "//span[contains(text(), 'Тематика')]") \
-            .click()
-        time.sleep(3)
-        driver.find_element(By.XPATH, "//li[contains(text(), 'Pentest')]") \
-            .click()
-        driver.find_element(By.XPATH, "//button[contains(text(), 'Применить')]") \
-            .click()
-
-        time.sleep(3)
-        driver.quit()
-
-    def test_case4_old(self, set_up_browser):
         driver = set_up_browser
         driver.get("https://skillbox.ru/code/")
         driver.maximize_window()
