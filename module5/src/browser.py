@@ -14,6 +14,6 @@ def set_up_browser():
     options.page_load_strategy = 'none'
     # Создаем драйвер локально с помощью webdriver_manager
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
-    driver.implicitly_wait(30)
+    #driver.implicitly_wait(30)
     yield driver
     driver.quit()
