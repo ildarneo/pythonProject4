@@ -8,6 +8,8 @@ import time
 from selenium.webdriver.support.ui import Select
 from selenium.webdriver.common.action_chains import ActionChains
 
+
+
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
@@ -97,38 +99,40 @@ class TestPraktik4:
         time.sleep(3)
         driver.quit()
 
-    # def test_case4_old(self, set_up_browser):
-    #     driver = set_up_browser
-    #     driver.get("https://skillbox.ru/code/")
-    #     driver.maximize_window()
-    #     time.sleep(5)
-    #
-    #     driver.find_element(By.XPATH,
-    #                         "//span[contains(text(), 'Профессия')]").click()
-    #
-    #     driver.find_element(By.XPATH,
-    #                         "//span[contains(@class, 'ui-round-select__field-title') and contains(text(), 'Длительность')]") \
-    #         .click()
-    #     driver.find_element(By.XPATH,
-    #                         "//li[contains(text(), 'От 6 до 12 мес.')]") \
-    #         .click()
-    #     driver.find_element(By.XPATH,
-    #                         "//span[contains(text(), 'Тематика')]") \
-    #         .click()
-    #     time.sleep(3)
-    #     driver.find_element(By.XPATH, "//li[contains(text(), 'Pentest')]") \
-    #         .click()
-    #     driver.find_element(By.XPATH, "//button[contains(text(), 'Применить')]") \
-    #         .click()
-    #
-    #     time.sleep(3)
-    #     driver.quit()
+    def test_case4_old(self, set_up_browser):
+        driver = set_up_browser
+        driver.get("https://skillbox.ru/code/")
+        driver.maximize_window()
+        time.sleep(5)
+
+        driver.find_element(By.XPATH,
+                            "//span[contains(text(), 'Профессия')]").click()
+
+        driver.find_element(By.XPATH,
+                            "//span[contains(@class, 'ui-round-select__field-title') and contains(text(), 'Длительность')]") \
+            .click()
+        driver.find_element(By.XPATH,
+                            "//li[contains(text(), 'От 6 до 12 мес.')]") \
+            .click()
+        driver.find_element(By.XPATH,
+                            "//span[contains(text(), 'Тематика')]") \
+            .click()
+        time.sleep(3)
+        driver.find_element(By.XPATH, "//li[contains(text(), 'Pentest')]") \
+            .click()
+        driver.find_element(By.XPATH, "//button[contains(text(), 'Применить')]") \
+            .click()
+
+        time.sleep(3)
+        driver.quit()
 
     def test_case5(self, set_up_browser):
         driver = set_up_browser
         driver.get("https://github.com/microsoft/vscode/graphs/commit-activity")
         driver.maximize_window()
-        el = driver.find_element(By.CSS_SELECTOR, 'path.highcharts-point.highcharts-color-0')
+        #el = driver.find_element(By.CSS_SELECTOR, 'path.highcharts-point.highcharts-color-0')
+        el = driver.find_element_by_xpath("//path[@class='highcharts-point highcharts-color-0' and @aria-label='Sunday,  4 May 2025, 264. Commits.']")
+
         actions = ActionChains(driver)
         time.sleep(6)
 

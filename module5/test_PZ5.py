@@ -1,6 +1,11 @@
 import pytest
 from selenium import webdriver
 from selenium.webdriver.chrome.service import Service as ChromeService
+<<<<<<< HEAD
+=======
+from selenium.webdriver.edge.webdriver import WebDriver
+from selenium.webdriver.support.wait import WebDriverWait
+>>>>>>> origin/main
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.chrome.options import Options
 from selenium.webdriver.common.by import By
@@ -27,6 +32,18 @@ class TestPraktik5:
         driver.find_element(By.XPATH,'//*[contains(text(),"The future of building happens together")]')
         # добавьте ваши проверки или действия здесь
         pass
+<<<<<<< HEAD
+=======
+    def testwait_types(self, set_up_browser):
+        driver = set_up_browser
+        driver.get("https://github.com/")
+        #driver.find_element(By.XPATH,'//*[contains(text(),"The future of building happens together")]')
+        # добавьте ваши проверки или действия здесь
+        WebDriverWait(driver, timeout=3).until(
+            lambda d: d.find_element(By.XPATH, '//*[contains(text(),"The future of building happens together")]')
+        )
+        pass
+>>>>>>> origin/main
 
     def test_mail(self, set_up_browser):
         driver = set_up_browser

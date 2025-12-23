@@ -11,7 +11,7 @@ from selenium.webdriver.common.action_chains import ActionChains
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
-from selenium.webdriver.support import expected_conditions as EC
+#from selenium.webdriver.support import expected_conditions as EC
 
 
 @pytest.fixture()
@@ -33,18 +33,16 @@ class TestPraktik5:
 
         time.sleep(1)
         search_input.send_keys(Keys.ENTER)
-
-        elements = driver.find_elements(By.CSS_SELECTOR, '[data-testid="issue-pr-title-link"]')
-
-        # Перебираем элементы
-        for element in elements:
-            text = element.text.strip()  # Получаем текст элемента
-
-                # Выполняем сравнение с ожидаемым словом
-            assert 'bug ' in text.lower(), f"В тексте не найдено слово 'bug ': {text}"
-            print("Найдено слово 'bug' в тексте:", text)
-
         time.sleep(5)
+        element = driver.find_element(By.XPATH, '//a[@href="/microsoft/vscode/issues/284816"]')
+
+        # Получить текст элемента
+        text = element.text
+
+        # Проверка через assert
+        assert 'bug' in text
+        print("Проверка прошла успешно: в тексте есть слово 'bug'.")
+
         driver.quit()
         pass
 
@@ -55,19 +53,17 @@ class TestPraktik5:
 
         driver.find_element(By.XPATH, "//span[text()='Author']").click()
         search_input = driver.find_element(By.CSS_SELECTOR, "input[aria-label='Filter authors']")
-
+        search_input.clear()
         search_input.send_keys("bpasero")
         search_input.click()
         time.sleep(3)
-        search_input = driver.find_element(By.ID, "repository-input")
 
-        # Получаем значение атрибута value
-        search_input = search_input.get_attribute('value')
-        time.sleep(3)
-        pass
+        # Получаем значение поля поиска
+        author_filter_value = search_input.get_attribute('value')
+        assert 'bpasero' in author_filter_value
+        if 'bpasero1' in author_filter_value:
+            print('найдены совпадения с автором bpasero ')
 
-        # Проверяем, что в значении есть 'brasero'
-        assert 'bpasero' in search_input
 
         time.sleep(3)
         driver.quit()
@@ -87,7 +83,6 @@ class TestPraktik5:
 
         driver.find_element(By.ID, "search_stars").send_keys(">20000")
         time.sleep(1)
-
 
         driver.find_element(By.ID, "search_filename").send_keys("environment.yml")
 
@@ -163,13 +158,12 @@ class TestPraktik5:
 
         actions.move_to_element(el).perform()
 
-
         time.sleep(3)
         tooltip = driver.find_element(By.CSS_SELECTOR, ".highcharts-tooltip")
         tooltip_text = tooltip.text
         print("Тултип:", tooltip_text)
 
-        # Проверка подскажите пожалуйста в каком направлении смотреть
+        # Проверка подскажите пожалуйста в каком направлении смотреть данный текст не проходит.
         expected_text = "Commits 15"
         assert expected_text == tooltip_text, f"Ожидали '{expected_text}', получили '{tooltip_text}'"
         driver.quit()

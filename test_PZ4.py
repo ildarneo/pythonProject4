@@ -19,7 +19,7 @@ def set_up_browser():
     driver.quit()
 
 
-class TestPraktik4:
+class TestPraktik5:
 
     def test_case1(self, set_up_browser):
         driver = set_up_browser
