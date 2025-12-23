@@ -13,7 +13,6 @@ from selenium.webdriver.common.by import By
 from selenium.webdriver.support.ui import WebDriverWait
 #from selenium.webdriver.support import expected_conditions as EC
 
-
 @pytest.fixture()
 def set_up_browser():
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()))
