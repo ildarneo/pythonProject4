@@ -11,7 +11,7 @@ path_to_driver = 'C:/Chromedriver/chromedriver.exe'  # это пример пу�
 @pytest.fixture()
 def set_up_browser():
     options = Options()
-    options.page_load_strategy = 'none'
+    options.page_load_strategy = 'normal'
     # Создаем драйвер локально с помощью webdriver_manager
     driver = webdriver.Chrome(service=ChromeService(ChromeDriverManager().install()), options=options)
     driver.implicitly_wait(30)
